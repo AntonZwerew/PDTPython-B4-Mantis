@@ -1,6 +1,8 @@
 from selenium import webdriver
 from fixture.session import SessionHelper
 from fixture.filler import FillerHelper
+from fixture.navigation import NavigationHelper
+from fixture.mantis_project import MantisProjectHelper
 
 
 class Application:
@@ -14,6 +16,8 @@ class Application:
         # self.wd.implicitly_wait(5)
         self.session = SessionHelper(self)
         self.filler = FillerHelper(self)
+        self.navigation = NavigationHelper(self)
+        self.mantis_project = MantisProjectHelper(self)
         self.base_url = base_url
         self.username = username
         self.password = password
