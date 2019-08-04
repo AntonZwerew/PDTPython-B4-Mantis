@@ -3,10 +3,11 @@ from fixture.session import SessionHelper
 from fixture.filler import FillerHelper
 from fixture.navigation import NavigationHelper
 from fixture.mantis_project import MantisProjectHelper
+from fixture.james import JamesHelper
 
 
 class Application:
-    def __init__(self, browser, base_url, username, password):
+    def __init__(self, browser, config):
         if browser == "chrome":
             self.wd = webdriver.Chrome()
         elif browser == "firefox":
@@ -18,9 +19,11 @@ class Application:
         self.filler = FillerHelper(self)
         self.navigation = NavigationHelper(self)
         self.mantis_project = MantisProjectHelper(self)
-        self.base_url = base_url
-        self.username = username
-        self.password = password
+        self.james = JamesHelper(self)
+        self.config = config
+        self.base_url = config["app"]["baseurl"]
+        self.username = config["app"]["username"]
+        self.password = config["app"]["password"]
 
     def is_valid(self):
         try:

@@ -27,8 +27,7 @@ def app(request, config):
     browser = request.config.getoption("--browser")
     config_app = config["app"]
     if fixture is None or not fixture.is_valid():
-        fixture = Application(browser=browser, base_url=config_app["baseurl"],
-                              username=config_app["username"], password=config_app["password"])
+        fixture = Application(browser=browser, config=config)
     # fixture.session.ensure_login(username=config_app["username"], password=config_app["password"])
     return fixture
 
@@ -56,6 +55,7 @@ def configure_ftp_server(request, config):
     request.addfinalizer(finalizer)
 
 
+# Можно ли вместо замены всего файла изменять только строчку с настройкой капчи?
 def install_server_configuration(host, username, password):
     with ftputil.FTPHost(host, username, password) as remote:
         if remote.path.isfile("config_inc.php.bak"):
