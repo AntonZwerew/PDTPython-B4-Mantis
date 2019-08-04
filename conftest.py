@@ -6,6 +6,7 @@ import json
 import os.path
 import importlib
 import jsonpickle
+import ftputil
 
 fixture = None
 target = None
@@ -21,10 +22,10 @@ def load_config(file):
 
 
 @pytest.fixture
-def app(request):
+def app(request, config):
     global fixture
     browser = request.config.getoption("--browser")
-    config_app = load_config(request.config.getoption("--target"))["app"]
+    config_app = config["app"]
     if fixture is None or not fixture.is_valid():
         fixture = Application(browser=browser, base_url=config_app["baseurl"],
                               username=config_app["username"], password=config_app["password"])
@@ -42,8 +43,39 @@ def stop(request):
 
 
 @pytest.fixture(scope="session")
-def db(request):
-    config_db = load_config(request.config.getoption("--target"))["db"]
+def config(request):
+    return load_config(request.config.getoption("--target"))
+
+
+@pytest.fixture(scope="session", autouse=True)
+def configure_ftp_server(request, config):
+    install_server_configuration(config["ftp"]["host"], config["ftp"]["username"], config["ftp"]["password"])
+
+    def finalizer():
+        restore_server_configuration(config["ftp"]["host"], config["ftp"]["username"], config["ftp"]["password"])
+    request.addfinalizer(finalizer)
+
+
+def install_server_configuration(host, username, password):
+    with ftputil.FTPHost(host, username, password) as remote:
+        if remote.path.isfile("config_inc.php.bak"):
+            remote.remove("config_inc.php.bak")
+        if remote.path.isfile("config_inc.php"):
+            remote.rename("config_inc.php", "config_inc.php.bak")
+        remote.upload(os.path.join(os.path.dirname(__file__), "resources\\config_inc.php"), "config_inc.php")
+
+
+def restore_server_configuration(host, username, password):
+    with ftputil.FTPHost(host, username, password) as remote:
+        if remote.path.isfile("config_inc.php"):
+            remote.remove("config_inc.php")
+        if remote.path.isfile("config_inc.php.bak"):
+            remote.rename("config_inc.php.bak", "config_inc.php")
+
+
+@pytest.fixture(scope="session")
+def db(request, config):
+    config_db = config["db"]
     dbfixture = DbFixture(host=config_db["host"], name=config_db["name"],
                           user=config_db["user"], password=config_db["password"])
 
@@ -54,8 +86,8 @@ def db(request):
 
 
 @pytest.fixture(scope="session")
-def orm(request):
-    config_db = load_config(request.config.getoption("--target"))["db"]
+def orm(request, config):
+    config_db = config["db"]
     orm_fixture = ORMHelper(host=config_db["host"], name=config_db["name"],
                             user=config_db["user"], password=config_db["password"])
 
