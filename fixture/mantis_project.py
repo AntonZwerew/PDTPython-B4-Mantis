@@ -16,8 +16,9 @@ class MantisProjectHelper:
 
     def delete_project(self, project):
         wd = self.app.wd
-        wd.find_element_by_link_text(project.name).click()  # id нельзя взять из свойств, а имя должно быть уникальным
+        # id нельзя взять из свойств, а имя должно быть уникальным
+        # Обрезаю "лишние" пробелы, т.к. они обрезаются в тестовом приложении
+        wd.find_element_by_link_text(" ".join(project.name.split())).click()
         wd.find_element_by_css_selector("[value='Delete Project']").click()
         wd.find_element_by_css_selector("[value='Delete Project']").click()
-
 
