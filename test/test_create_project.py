@@ -17,4 +17,5 @@ def test_create_correct_project(app, orm):
     projects_after = orm.get_all_projects()
     projects_before.append(project)
     assert projects_before == projects_after
+    # assert app.soap.get_all_projects(app.username, app.password) == projects_before
 

@@ -1,0 +1,6 @@
+selenium
+jsonpickle
+mysql-connector-python-rf
+pony
+pytest
+ftputil

@@ -4,7 +4,9 @@ from fixture.filler import FillerHelper
 from fixture.navigation import NavigationHelper
 from fixture.mantis_project import MantisProjectHelper
 from fixture.james import JamesHelper
-
+from fixture.mail import MailHelper
+from fixture.signup import SignupHelper
+from fixture.soap import SoapHelper
 
 class Application:
     def __init__(self, browser, config):
@@ -20,6 +22,9 @@ class Application:
         self.navigation = NavigationHelper(self)
         self.mantis_project = MantisProjectHelper(self)
         self.james = JamesHelper(self)
+        self.mail = MailHelper(self)
+        self.signup = SignupHelper(self)
+        self.soap = SoapHelper(self)
         self.config = config
         self.base_url = config["app"]["baseurl"]
         self.username = config["app"]["username"]
