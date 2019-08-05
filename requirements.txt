@@ -6,3 +6,5 @@ pytest
 ftputil
 suds-jurko
 pymysql
+lxml-4.3.5-cp37-cp37m-win32.whl
+allure-pytest
