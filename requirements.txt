@@ -4,3 +4,4 @@ mysql-connector-python-rf
 pony
 pytest
 ftputil
+suds-jurko
