@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Aug 05 13:40:30 MSK 2019","Mon Aug 05 13:40:32 MSK 2019","1337","test","test_login","","","","test_login",""
+"passed","Mon Aug 05 13:40:24 MSK 2019","Mon Aug 05 13:40:28 MSK 2019","3913","test","test_create_project","","","","test_create_correct_project",""
+"passed","Mon Aug 05 13:40:28 MSK 2019","Mon Aug 05 13:40:30 MSK 2019","2324","test","test_delete_project","","","","test_delete_project",""
+"passed","Mon Aug 05 13:40:32 MSK 2019","Mon Aug 05 13:40:45 MSK 2019","13016","test","test_singup_new_account","","","","test_signup_new_account",""

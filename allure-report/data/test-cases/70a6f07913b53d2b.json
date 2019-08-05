@@ -1,0 +1,145 @@
+{
+  "uid" : "70a6f07913b53d2b",
+  "name" : "test_login",
+  "fullName" : "test.test_login#test_login",
+  "historyId" : "6aed4a32a02c8cc6f308ae2d479ee85a",
+  "time" : {
+    "start" : 1565000305370,
+    "stop" : 1565000305370,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "statusMessage" : "AttributeError: module 'pytest' has no attribute 'allure'",
+  "statusTrace" : "app = <fixture.application.Application object at 0x05FE2E50>\n\n    def test_login(app):\n>       with pytest.allure.step(\"Logging in:\"):\nE       AttributeError: module 'pytest' has no attribute 'allure'\n\ntest\\test_login.py:5: AttributeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "app",
+    "time" : {
+      "start" : 1565000305321,
+      "stop" : 1565000305370,
+      "duration" : 49
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "configure_ftp_server",
+    "time" : {
+      "start" : 1565000299914,
+      "stop" : 1565000299946,
+      "duration" : 32
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "stop",
+    "time" : {
+      "start" : 1565000299946,
+      "stop" : 1565000299946,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "config",
+    "time" : {
+      "start" : 1565000299914,
+      "stop" : 1565000299914,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "configure_ftp_server::finalizer",
+    "time" : {
+      "start" : 1565000307780,
+      "stop" : 1565000307795,
+      "duration" : 15
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "stop::finalizer",
+    "time" : {
+      "start" : 1565000305424,
+      "stop" : 1565000307780,
+      "duration" : 2356
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_login"
+  }, {
+    "name" : "subSuite"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-NBOT6S2"
+  }, {
+    "name" : "thread",
+    "value" : "16208-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_login"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "70a6f07913b53d2b.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,89 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "test",
+    "children" : [ {
+      "name" : "test_create_project",
+      "children" : [ {
+        "children" : [ {
+          "name" : "test_create_correct_project",
+          "uid" : "415b9bc25a11c8e5",
+          "parentUid" : "7cead6a7219ee447b376df8c742749d7",
+          "status" : "passed",
+          "time" : {
+            "start" : 1565001624391,
+            "stop" : 1565001628304,
+            "duration" : 3913
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "7cead6a7219ee447b376df8c742749d7"
+      } ],
+      "uid" : "fc42ed4fc89ea49d829d3ccc2830565f"
+    }, {
+      "name" : "test_delete_project",
+      "children" : [ {
+        "children" : [ {
+          "name" : "test_delete_project",
+          "uid" : "f0d3d5107361fda4",
+          "parentUid" : "0f406d9d9b54c005015117cbadead639",
+          "status" : "passed",
+          "time" : {
+            "start" : 1565001628359,
+            "stop" : 1565001630683,
+            "duration" : 2324
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "0f406d9d9b54c005015117cbadead639"
+      } ],
+      "uid" : "7144902511a8e93288a11f2c4daacecd"
+    }, {
+      "name" : "test_login",
+      "children" : [ {
+        "children" : [ {
+          "name" : "test_login",
+          "uid" : "fcf901281da864a4",
+          "parentUid" : "21df3dd88b65ef5563466fe87a0984e9",
+          "status" : "passed",
+          "time" : {
+            "start" : 1565001630745,
+            "stop" : 1565001632082,
+            "duration" : 1337
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "21df3dd88b65ef5563466fe87a0984e9"
+      } ],
+      "uid" : "c4a01f12baded41f5a9208716f096c56"
+    }, {
+      "name" : "test_singup_new_account",
+      "children" : [ {
+        "children" : [ {
+          "name" : "test_signup_new_account",
+          "uid" : "694f004cbb934ae8",
+          "parentUid" : "611fbc20bfb90a036aca51e8873ccd78",
+          "status" : "passed",
+          "time" : {
+            "start" : 1565001632140,
+            "stop" : 1565001645156,
+            "duration" : 13016
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "611fbc20bfb90a036aca51e8873ccd78"
+      } ],
+      "uid" : "4b185bf265b95bc0ece970e4c89d1f27"
+    } ],
+    "uid" : "ff2b04dbb9c449a4d40723f51d841925"
+  } ]
+}

@@ -1,0 +1,175 @@
+{
+  "uid" : "c153e80117e13fe7",
+  "name" : "test_create_correct_project",
+  "fullName" : "test.test_create_project#test_create_correct_project",
+  "historyId" : "40f620f5f114b77e0366b809fce7d311",
+  "time" : {
+    "start" : 1564999625650,
+    "stop" : 1564999625650,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "statusMessage" : "AttributeError: module 'pytest' has no attribute 'allure'",
+  "statusTrace" : "app = <fixture.application.Application object at 0x065AEE70>, orm = <fixture.orm.ORMHelper object at 0x064D0F90>\n\n    def test_create_correct_project(app, orm):\n>       with pytest.allure.step(\"Opening projects page:\"):\nE       AttributeError: module 'pytest' has no attribute 'allure'\n\ntest\\test_create_project.py:6: AttributeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "config",
+    "time" : {
+      "start" : 1564999623180,
+      "stop" : 1564999623180,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "configure_ftp_server",
+    "time" : {
+      "start" : 1564999623180,
+      "stop" : 1564999623280,
+      "duration" : 100
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1564999623381,
+      "stop" : 1564999625649,
+      "duration" : 2268
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "orm",
+    "time" : {
+      "start" : 1564999623280,
+      "stop" : 1564999623381,
+      "duration" : 101
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "stop",
+    "time" : {
+      "start" : 1564999623280,
+      "stop" : 1564999623280,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "configure_ftp_server::finalizer",
+    "time" : {
+      "start" : 1564999630963,
+      "stop" : 1564999630985,
+      "duration" : 22
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "orm::finalizer",
+    "time" : {
+      "start" : 1564999631063,
+      "stop" : 1564999631063,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "stop::finalizer",
+    "time" : {
+      "start" : 1564999628619,
+      "stop" : 1564999630963,
+      "duration" : 2344
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_create_project"
+  }, {
+    "name" : "subSuite"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-NBOT6S2"
+  }, {
+    "name" : "thread",
+    "value" : "18304-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_create_project"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "c153e80117e13fe7.json",
+  "parameterValues" : [ ]
+}
