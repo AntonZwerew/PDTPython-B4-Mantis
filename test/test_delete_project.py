@@ -18,5 +18,8 @@ def test_delete_project(app, orm):
         projects_after = orm.get_all_projects()
         projects_before.remove(project)
     with allure.step("Check project removing correctly:"):
-        assert sorted(projects_before, key=mantis_project.id_or_max) == sorted(projects_after, key=mantis_project.id_or_max)
+        assert sorted(projects_before, key=mantis_project.id_or_max) == \
+               sorted(projects_after, key=mantis_project.id_or_max)
+        assert sorted(app.soap.get_all_projects(app.username, app.password), key=mantis_project.id_or_max) == \
+               sorted(projects_before, key=mantis_project.id_or_max)
 

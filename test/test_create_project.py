@@ -1,4 +1,5 @@
 from generator.project_generator import random_project
+from model import mantis_project
 import allure
 
 
@@ -19,6 +20,8 @@ def test_create_correct_project(app, orm):
         projects_after = orm.get_all_projects()
         projects_before.append(project)
     with allure.step("Check that the project has been added correctly:"):
-        assert projects_before == projects_after
-        # assert app.soap.get_all_projects(app.username, app.password) == projects_before
+        assert sorted(projects_before, key=mantis_project.id_or_max) == \
+               sorted(projects_after, key=mantis_project.id_or_max)
+        assert sorted(app.soap.get_all_projects(app.username, app.password), key=mantis_project.id_or_max) == \
+               sorted(projects_before, key=mantis_project.id_or_max)
 

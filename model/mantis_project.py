@@ -10,7 +10,7 @@ class MantisProject:
     valid_project_views = {10: "public",
                            50: "private"}
 
-    def __init__(self, name, status, global_categories, view_status, description, project_id=None):
+    def __init__(self, name, status, view_status, description, global_categories=None, project_id=None):
 
         self.id = project_id
         self.name = name
@@ -20,7 +20,7 @@ class MantisProject:
         else:
             raise AttributeError("Incorrect project status")
 
-        if type(global_categories) == bool:
+        if type(global_categories) == bool or global_categories is None:
             self.global_categories = global_categories
         else:
             raise AttributeError("Incorrect Inherit Global Categories flag")
@@ -33,12 +33,13 @@ class MantisProject:
         self.description = description
 
     def __repr__(self):
-        return "%s %s %s %s %s" % (self.name, self.status, self.global_categories, self.view_status, self.description)
+        return "%s %s %s %s" % (self.name, self.status, self.view_status, self.description)
 
     def __eq__(self, other):
         eq = (self.name == other.name and
               self.status == other.status and
-              self.global_categories == other.global_categories and
+              # Через SOAP нельзя получить данный флаг
+              # self.global_categories == other.global_categories and
               self.view_status == other.view_status and
               self.description == other.description)
         return eq
